@@ -1,0 +1,49 @@
+/* css styles */
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+    line-height: 1.7em;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size:20px;
+  
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.title {
+    font-size: 50px;
+}
+
+:root {
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
+      HarmonyOS_Regular, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
+      Helvetica, "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei",
+      Arial, sans-serif;
+    --font-serif: STZhongsong, STSong, "Noto Serif CJK", "Noto Serif SC", PMingLiu,
+      SimSun, "WenQuanYi Bitmap Song", "Times New Roman", Times, serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono: "Fira Code", Menlo, Monaco, Consolas,"Courier New", monospace, 
+      ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code",
+      "Segoe UI Mono", "Source Code Pro", "Liberation Mono";
+}
+
+body {
+    font-family: var(--font-sans-serif);
+    line-height: 1.7em;
+    text-align: left;
+}
