@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Pygraphviz安装记录/Pygraphviz安装记录.html",
+      "/posts/quarto-notes/quarto-notes.html",
       "/posts/决策树/decision-tree.html",
       "/posts/matplotlib中的figure对象/matplotlib中的Figure对象.html",
       "/posts/Pandas-Tips：使用merge实现关系型合并/Pandas Tips：使用merge实现关系型合并.html",

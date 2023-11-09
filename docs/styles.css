@@ -45,5 +45,17 @@ h3 {
 body {
     font-family: var(--font-sans-serif);
     line-height: 1.7em;
-    text-align: left;
+    text-align: justify;
+}
+
+.navbar-dark {
+    background-color: white;
+}
+
+.quarto-title-banner {
+    background-color: white;
+}
+
+.navbar-title {
+    font-weight: 600;
 }

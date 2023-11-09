@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tom">
+<meta name="dcterms.date" content="2023-11-09">
 
-<title>RoundedTom - About</title>
+<title>RoundedTom - Pygraphviz安装记录</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,24 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -70,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">RoundedTom</span>
     </a>
   </div>
@@ -81,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -102,42 +139,84 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Pygraphviz安装记录</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">机器学习</div>
+                <div class="quarto-category">数据可视化</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 9, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="logo.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>欢迎来到 RoundedTom，这是由汤姆维护的个人博客，主要记录一些金融计量、概率论、机器学习、数据分析相关的内容，大部分是个人笔记:)</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://twitter.com" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-  <a href="https://linkedin.com" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+
+<p>这是一次失败的安装记录。起因是我想试一下 pybaobabdt，而 pybaobabdt 需要安装 Pygraphviz。网上大部分资料都是使用 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Christoph Gohlke</a> 提供的 whl 文件进行本地安装，而我的 Python 版本是 3.11，没有相应的 whl 文件，于是我打算参考官方文档使用 pip 进行安装。此刻，我还不知道这个决定意味着什么:)</p>
+<blockquote class="blockquote">
+<p>在软件开发中，“wheel” 是一个特定的 Python 包发布格式，通常用于 Python 包的分发和安装。Wheel 文件通常包含了已经编译好的二进制代码，以及与特定操作系统和 Python 版本兼容的相关文件，以便更快地安装 Python 包，而无需进行编译。</p>
+<p>Wheel 文件的主要优势在于它们可以节省时间，因为它们不需要在安装时进行编译，而是直接使用预编译的二进制代码，因此安装速度更快。这对于大型项目和依赖复杂的 Python 包非常有用，因为它们通常需要较长时间来编译。 Wheel 文件通常以 “.whl” 扩展名结尾，例如 “mypackage-1.0-py3-none-any.whl”，其中 “mypackage” 是包的名称，“1.0” 是版本号，“py3” 表示兼容的 Python 版本，“none” 表示与操作系统无关，“any” 表示适用于任何操作系统。</p>
+<p>Python 的包管理工具 pip 支持从 wheel 文件安装 Python 包，因此开发者可以更轻松地将其包分发给其他用户，并确保兼容性和安装速度。通常，当你使用 pip 安装 Python 包时，它会首先尝试使用 wheel 文件，如果可用的话，以提高安装效率。如果没有可用的 wheel 文件，pip 将使用源代码进行安装，需要编译并构建包。 —— ChatGPT</p>
+</blockquote>
+<p>根据官方文档，在 windows 系统上安装 Pygraphviz，首先需要手动下载安装 Graphviz，并将 Graphviz 添加到环境变量。</p>
+<blockquote class="blockquote">
+<p>Graphviz是一个开源的图形可视化工具，用于绘制各种类型的图形，如有向图、无向图和树。它提供了一种简单的描述图形的语言（通常是DOT语言），通过这种语言，你可以指定图形的节点、边和布局等属性。Graphviz会将这些描述转换为可视化图形。它支持多种输出格式，包括PNG、PDF、SVG等。Graphviz是一个独立的工具，不直接与Python关联。</p>
+</blockquote>
+<p>其次，需要下载安装 Visual C/C++。然后使用 pip 进行安装：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip install <span class="op">--</span>use<span class="op">-</span>pep517 `</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="op">--</span>config<span class="op">-</span>setting<span class="op">=</span><span class="st">"--global-option=build_ext"</span> `</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="op">--</span>config<span class="op">-</span>setting<span class="op">=</span><span class="st">"--global-option="</span><span class="op">-</span>IC<span class="op">:</span>\ProgramFiles\Graphviz\include<span class="st">" `</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              <span class="op">--</span>config<span class="op">-</span>setting<span class="op">=</span><span class="st">"--global-option="</span><span class="op">-</span>LC<span class="op">:</span>\ProgramFiles\Graphviz\lib<span class="st">" `</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              pygraphviz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>然后收获如下报错：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pygraphviz<span class="op">/</span>graphviz_wrap<span class="op">.</span><span class="fu">c</span><span class="op">(</span>3020<span class="op">):</span> fatal error C1083<span class="op">:</span> 无法打开包括文件<span class="op">:</span> “graphviz<span class="op">/</span>cgraph<span class="op">.</span><span class="fu">h</span>”<span class="op">:</span> No such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在 <code>C:\Program Files\Graphviz\include\graphviz\</code> 下确实可以找到 <code>cgraph.h</code> 这个文件。这个报错查阅了很多资料，都无法解决，几个小时过去了，在 Medium 上看到了一篇文章 <a href="https://medium.com/@notokesporketokas/trying-to-install-pygraphviz-on-windows-is-a-real-pain-82502752365b">Trying to install pygraphviz on windows is a real pain</a>，真是说出了我的心声:(</p>
+<p>最后无奈选择了在 WSL2 上安装。在 WSL2 Ubuntu18.04 上安装就简单多了，虽然也出现了报错：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ERROR:</span> Could not build wheels for pygraphviz, which is required to install pyproject.toml-based projects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>根据一篇<a href="https://bobbyhadz.com/blog/python-could-not-build-wheels-for-which-use-pep-517">教程</a>也很容易就解决了:)</p>
+<section id="参考资料" class="level1">
+<h1>参考资料</h1>
+<ul>
+<li>https://pygraphviz.github.io/documentation/stable/install.html</li>
+<li>https://www.lfd.uci.edu/~gohlke/pythonlibs/</li>
+<li>https://github.com/pygraphviz/pygraphviz/issues/155</li>
+<li>https://medium.com/<span class="citation" data-cites="notokesporketokas/trying-to-install-pygraphviz-on-windows-is-a-real-pain-82502752365b">@notokesporketokas/trying-to-install-pygraphviz-on-windows-is-a-real-pain-82502752365b</span></li>
+<li>https://bobbyhadz.com/blog/python-could-not-build-wheels-for-which-use-pep-517</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -158,6 +237,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
