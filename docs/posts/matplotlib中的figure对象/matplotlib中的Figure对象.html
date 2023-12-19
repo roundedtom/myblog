@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>matplotlib 使用 <code>Artist</code> 对象处理点、线、文字、图片等图像要素在绘图区域上展现的细节问题。<code>Artist</code> 对象可以分为两种类型：一是基础对象，包括点、线、文字、图片等要素；二是容器对象，包括画布、坐标轴、坐标系等。其中，画布 <code>Figure</code> 是最基础的容器对象，是容纳其他一切 <code>Artist</code> 对象的基础。</p>
 <section id="如何查看图像" class="level1">
 <h1>如何查看图像</h1>
-<p>matplotlib 支持通过使用 <code>%matplotlib &lt;backend&gt;</code> 魔法指令来指定渲染图形的后端。Jupyter 默认的后端是 <code>%matplotlib inline</code> ，在渲染图像是会默认调整图像尺寸以获得最佳的显示效果（have a tight box around Artists added to the Figure）。</p>
+<p>matplotlib 支持通过使用 <code>%matplotlib &lt;backend&gt;</code> 魔法指令来指定渲染图形的后端。Jupyter 默认的后端是 <code>%matplotlib inline</code> ，在渲染图像时会默认调整图像尺寸以获得最佳的显示效果（have a tight box around Artists added to the Figure）。</p>
 <p>VScode-jupyter 支持 <code>%matplotlib inline</code> 和 <code>%matplotlib widget</code>，后者会生成一个 ipywidget，用于控制图形渲染，支持缩放等操作。</p>
 <p>此外，还有一些其他的渲染后端，比如 QtAgg 会实现一个交互式的窗口用于显示图形。</p>
 <div class="cell" data-execution_count="1">
