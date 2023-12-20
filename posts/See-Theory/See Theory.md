@@ -1,11 +1,12 @@
 ---
-title: See theory - Notes on probability theory
+title: See theory, notes on probability theory
 author: Tom
 date: "2020-04-19"
 toc: true
 code-block-bg: true
 highlight-style: atom-one
 categories: [概率论]
+image: theory.png
 code-fold: false
 html-math-method: katex
 jupyter: python3

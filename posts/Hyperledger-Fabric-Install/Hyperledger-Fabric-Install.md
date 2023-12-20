@@ -6,6 +6,7 @@ toc: true
 code-block-bg: true
 highlight-style: atom-one
 categories: [Fabric]
+image: fabric.png
 code-fold: false
 html-math-method: katex
 jupyter: python3

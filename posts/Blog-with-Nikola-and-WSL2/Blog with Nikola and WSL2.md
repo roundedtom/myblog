@@ -6,12 +6,11 @@ toc: true
 code-block-bg: true
 highlight-style: atom-one
 categories: [博客, WSL2, Nikola]
+image: nikola.jpg
 code-fold: false
 html-math-method: katex
 jupyter: python3
 ---
-
-![](./nikola.jpg){width=100%}
 
 一直希望搭建一个博客，一方面是希望能有一个地方记录整理自己学过的知识，另一方面也希望能交到一些志同道合的朋友（有人可以讨论真是太棒了！）在各种鼓捣之后，我选择了 [Nikola](https://getnikola.com/)，因为它原生支持 Jupyter notebook。至于为什么选择静态博客，Nikola 官网这篇[文章](https://getnikola.com/handbook.html#why-static)写的很好。
 

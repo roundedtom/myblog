@@ -1,11 +1,12 @@
 ---
-title: Ubuntu 18.04 安装与配置
+title: Ubuntu18.04安装与配置
 author: Tom
 date: "2019-04-19"
 toc: true
 code-block-bg: true
 highlight-style: atom-one
 categories: [Ubuntu, Linux]
+image: ubuntu.png
 code-fold: false
 html-math-method: katex
 jupyter: python3

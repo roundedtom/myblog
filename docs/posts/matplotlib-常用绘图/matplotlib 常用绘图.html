@@ -197,13 +197,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="条形图" class="level1">
 <h1>条形图</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据准备</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>customers <span class="op">=</span> [<span class="st">'ABC'</span>, <span class="st">'DEF'</span>, <span class="st">'GHI'</span>, <span class="st">'JKL'</span>, <span class="st">'MNO'</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>customers_index <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(customers))</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sale_amounts <span class="op">=</span> [<span class="dv">127</span>, <span class="dv">90</span>, <span class="dv">201</span>, <span class="dv">111</span>, <span class="dv">232</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">9</span>)) <span class="co"># figsize确定像素比</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.style.use('ggplot') 使用 ggplot 风格</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># 创建子图</span></span>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Customer Name'</span>) <span class="co"># 设置x轴标签</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Sale Amount'</span>) <span class="co"># 设置y轴标签</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sale Amount per Customer'</span>) <span class="co"># 设置图形标题</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'bar_plot.png'</span>, dpi<span class="op">=</span><span class="dv">400</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>) <span class="co"># 保存图片；设置图形分辨率；将图形四周空白部分去掉</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'bar_plot.png'</span>, dpi<span class="op">=</span><span class="dv">100</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>) <span class="co"># 保存图片；设置图形分辨率；将图形四周空白部分去掉</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="matplotlib 常用绘图_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
