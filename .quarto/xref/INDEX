@@ -100,5 +100,20 @@
   },
   "posts/quarto-notes/quarto-notes.ipynb": {
     "quarto-notes.html": "547422f5"
+  },
+  "posts/pandas-group-notes/pandas-group.ipynb": {
+    "pandas-group.html": "b06c19bd"
+  },
+  "posts/numpy-random-notes/numpy_random.ipynb": {
+    "numpy_random.html": "f1d93f38"
+  },
+  "posts/seaborn-notes/seaborn-notes.ipynb": {
+    "seaborn-notes.html": "6821d2ac"
+  },
+  "posts/cleaning-and-tidy-data/Cleaning_and_Tidying_Data_in_Pandas.ipynb": {
+    "Cleaning_and_Tidying_Data_in_Pandas.html": "3fb0c2d3"
+  },
+  "posts/statistics-notes/statistics_notes.ipynb": {
+    "statistics_notes.html": "b0a40d0e"
   }
 }

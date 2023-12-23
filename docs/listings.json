@@ -2,15 +2,18 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/numpy-random-notes/numpy_random.html",
       "/posts/Pygraphviz安装记录/Pygraphviz安装记录.html",
       "/posts/quarto-notes/quarto-notes.html",
       "/posts/决策树/decision-tree.html",
       "/posts/matplotlib中的figure对象/matplotlib中的Figure对象.html",
+      "/posts/seaborn-notes/seaborn-notes.html",
       "/posts/Pandas-Tips：使用merge实现关系型合并/Pandas Tips：使用merge实现关系型合并.html",
       "/posts/Pandas-Tips：使用-query-实现优雅的查询/Pandas Tips：使用 query 实现优雅的查询.html",
       "/posts/在-Pandas-中如何实现复杂的筛选/在 Pandas 中如何实现复杂的筛选.html",
       "/posts/手把手教你做事件研究-爬取巨潮资讯公告PDF文件/手把手教你做事件研究-爬取巨潮资讯公告PDF文件.html",
       "/posts/三门问题/三门问题.html",
+      "/posts/cleaning-and-tidy-data/Cleaning_and_Tidying_Data_in_Pandas.html",
       "/posts/手把手教你做事件研究-事件研究/手把手教你做事件研究-事件研究.html",
       "/posts/手把手教你做事件研究-数据清洗Part2/手把手教你做事件研究-数据清洗Part2.html",
       "/posts/手把手教你做事件研究-数据清洗Part1/手把手教你做事件研究-数据清洗Part1.html",
