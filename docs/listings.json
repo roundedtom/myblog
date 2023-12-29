@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/独立均值独立与线性不相关/独立均值独立与线性不相关.html",
       "/posts/numpy-random-notes/numpy_random.html",
       "/posts/Pygraphviz安装记录/Pygraphviz安装记录.html",
       "/posts/quarto-notes/quarto-notes.html",

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom">
-<meta name="dcterms.date" content="2023-11-09">
+<meta name="dcterms.date" content="2023-12-29">
 
-<title>RoundedTom - Quarto Notes</title>
+<title>RoundedTom - 独立、均值独立于线性不相关</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -96,6 +62,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -142,9 +124,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Quarto Notes</h1>
+      <h1 class="title">独立、均值独立于线性不相关</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">博客</div>
+                <div class="quarto-category">概率论</div>
               </div>
                   </div>
   </div>
@@ -162,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 9, 2023</p>
+        <p class="date">December 29, 2023</p>
       </div>
     </div>
     
@@ -177,11 +159,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#metadata" id="toc-metadata" class="nav-link active" data-scroll-target="#metadata">Metadata</a></li>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
-  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">latex</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <ul class="collapse">
+  <li><a href="#独立" id="toc-独立" class="nav-link active" data-scroll-target="#独立">独立</a></li>
+  <li><a href="#均值独立" id="toc-均值独立" class="nav-link" data-scroll-target="#均值独立">均值独立</a></li>
+  <li><a href="#线性不相关" id="toc-线性不相关" class="nav-link" data-scroll-target="#线性不相关">线性不相关</a></li>
+  <li><a href="#三者间的关系" id="toc-三者间的关系" class="nav-link" data-scroll-target="#三者间的关系">三者间的关系</a>
+  <ul class="collapse">
+  <li><a href="#引理-1迭代期望法则" id="toc-引理-1迭代期望法则" class="nav-link" data-scroll-target="#引理-1迭代期望法则">引理 1：迭代期望法则</a></li>
+  <li><a href="#引理-2协方差与条件期望法则" id="toc-引理-2协方差与条件期望法则" class="nav-link" data-scroll-target="#引理-2协方差与条件期望法则">引理 2：协方差与条件期望法则</a></li>
+  <li><a href="#由均值独立推出线性不相关" id="toc-由均值独立推出线性不相关" class="nav-link" data-scroll-target="#由均值独立推出线性不相关">由均值独立推出线性不相关</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -191,55 +178,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="metadata" class="level1">
-<h1>Metadata</h1>
-<p>Quarto 文章 metadata 采用 Yaml 语言定义，以下是一个常见的例子：</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Quarto Notes</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Tom</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2023-11-09"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">  # 是否开启文章目录</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span><span class="co"> # 目录层级深度，默认3级目录</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">code-block-bg</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">  # 代码块背景颜色</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> atom-one</span><span class="co">  # 代码块语法高亮风格</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">博客</span><span class="kw">]</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # 代码块是否折叠</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cold-line-numbers</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 代码块是否显示行数</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # true/false/hover</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">draft</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # 博文是否为草稿，草稿不显示在博客中</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">html-math-method</span><span class="kw">:</span><span class="at"> katex</span><span class="co"> # latex 引擎，默认是 MathJax</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">jupyter</span><span class="kw">:</span><span class="at"> python3</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="独立" class="level1">
+<h1>独立</h1>
+<p>两个随机变量 <span class="math inline">x</span> 和 <span class="math inline">y</span>，满足 <span class="math inline">f(x) \times f(y) = f(x,y)</span>，则称随机变量 <span class="math inline">x</span> 和 <span class="math inline">y</span> 独立。从图像上来理解，就是对任意的 <span class="math inline">x</span>，<span class="math inline">f_{Y|X}(y|x)</span> 都是相同的，所以 <span class="math inline">x</span> 不会带来任务新的信息。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./image/独立.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">独立</figcaption>
+</figure>
+</div>
 </section>
-<section id="markdown" class="level1">
-<h1>Markdown</h1>
-<p>图片占比 100%</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](./quarto.png)</span>{width=100%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="均值独立" class="level1">
+<h1>均值独立</h1>
+<p>对随机变量 <span class="math inline">x</span> 和 <span class="math inline">y</span>，若 <span class="math inline">E(y|x) = E(y)</span>，则称随机变量 <span class="math inline">y</span> 均值独立于随机变量 <span class="math inline">x</span>。从图像上来理解，就是任意给定 <span class="math inline">x</span>，<span class="math inline">f_{Y|X}</span> 的条件期望是一样的，分布可以不一样。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./image/均值独立.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">均值独立</figcaption>
+</figure>
+</div>
 </section>
-<section id="latex" class="level1">
-<h1>latex</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>E(X) &amp;= <span class="fu">\int</span>{x<span class="fu">\int</span>{yf_{X,Y}(x,y)dy}dx} <span class="fu">\\</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>&amp;= <span class="fu">\int</span>{xf_{X}(x)dx} <span class="fu">\\</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>&amp;= E(X)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">split</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="线性不相关" class="level1">
+<h1>线性不相关</h1>
+<p>若随机变量 <span class="math inline">x</span> 和 <span class="math inline">y</span> 协方差为 0，则称随机变量 <span class="math inline">x</span> 和 <span class="math inline">y</span> 线性无关。</p>
 </section>
-<section id="git" class="level1">
-<h1>Git</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看仓库状态</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看文件修改情况</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff filename</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 将文件修改提交到暂存区</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add filename</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将所有文件提交到暂存区</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A.</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 将暂存区的内容提交到当前分支 </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 将内容推送到远程仓库</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="三者间的关系" class="level1">
+<h1>三者间的关系</h1>
+<p>从条件强度来说，<strong>独立 &gt; 均值独立 &gt; 线性不相关</strong>。</p>
+<section id="引理-1迭代期望法则" class="level2">
+<h2 class="anchored" data-anchor-id="引理-1迭代期望法则">引理 1：迭代期望法则</h2>
+<p><span class="math display">
+E[Y] = E[E[Y|X]]
+</span></p>
+<p>证明：</p>
+<p><span class="math display">
+\begin{split}
+E[E[Y|X]] &amp;= \int{\int{y f_{Y|X}(y|x)dy}f_X(x)dx} \\
+&amp;= \int{\int{y \frac{f_{X,Y}(x,y)}{f_{X}(x)} dy}f_X(x)dx} \\
+&amp;= \int{\int{y f_{X,Y}(x,y)dy}dx} \\
+&amp;= \int{\int{f_{X,Y}(x,y)dx}ydy} \\
+&amp;= \int{y f_{Y}(y)dy} \\
+&amp;= E[Y]
+\end{split}
+</span></p>
+</section>
+<section id="引理-2协方差与条件期望法则" class="level2">
+<h2 class="anchored" data-anchor-id="引理-2协方差与条件期望法则">引理 2：协方差与条件期望法则</h2>
+<p><span class="math display">
+Cov[X,Y] = Cov[X, E[Y|X]]
+</span></p>
+<p>证明：</p>
+<p><span class="math display">
+\begin{split}
+Cov[X, E[Y|X]] &amp;= E[XE[Y|X]] - E[X]E[E[Y|X]] \\
+&amp;= \int{xf_{X}(x) \int{yf_{Y|X}(y|x)dy}dx} - E[X]E[Y] \\
+&amp;= \int{xf_{X}(x) \int{y \frac{f_{X,Y}(x,y)}{f_{X}(x)}dy}dx} - E[X]E[Y] \\
+&amp;= \int{\int{xy f_{X,Y}(x,y)dy}dx} - E[X]E[Y] \\
+&amp;= E[XY] - E[X]E[Y] \\
+&amp;= Cov[X,Y]
+\end{split}
+</span></p>
+</section>
+<section id="由均值独立推出线性不相关" class="level2">
+<h2 class="anchored" data-anchor-id="由均值独立推出线性不相关">由均值独立推出线性不相关</h2>
+<p><span class="math display">
+\begin{split}
+Cov(X,Y) &amp;= E[XY] - E[X]E[Y] \\
+&amp;= E[E[XY|X]] - E[X]E[Y] \\
+&amp;= E[XE[Y|X]] - E[X]E[Y] \\
+&amp;= E[XE[Y]] - E[X]E[Y] \\
+&amp;= E[X]E[Y] - E[X]E[Y] \\
+&amp;= 0
+\end{split}
+</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
