@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/matplotlib科研绘图/beautiful_data_visualizations_with_matplotlib.html",
+      "/posts/线性相关与显著性检验/线性相关与显著性检验.html",
       "/posts/独立均值独立与线性不相关/独立均值独立与线性不相关.html",
       "/posts/numpy-random-notes/numpy_random.html",
       "/posts/Pygraphviz安装记录/Pygraphviz安装记录.html",
