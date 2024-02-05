@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/一键计算CAR/一键计算CAR.html",
       "/posts/WSL2+OhMyZsh+VSCode开发环境搭建/WSL2+OhMyZsh+VSCode开发环境搭建.html",
       "/posts/Pandas常用操作/pandas常用技巧.html",
       "/posts/matplotlib科研绘图笔记/matplotlib科研绘图笔记.html",
