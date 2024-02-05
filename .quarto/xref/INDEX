@@ -130,5 +130,11 @@
   },
   "posts/WSL2+VSCode开发环境搭建/WSL2+VSCode开发环境搭建.md": {
     "WSL2+VSCode开发环境搭建.html": "760566e3"
+  },
+  "posts/WSL2+OhMyZsh+VSCode开发环境搭建/WSL2+OhMyZsh+VSCode开发环境搭建.md": {
+    "WSL2+OhMyZsh+VSCode开发环境搭建.html": "34d61a51"
+  },
+  "posts/matplotlib科研绘图笔记/matplotlib科研绘图笔记.ipynb": {
+    "matplotlib科研绘图笔记.html": "1afd93b3"
   }
 }

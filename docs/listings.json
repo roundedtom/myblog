@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/WSL2+VSCode开发环境搭建/WSL2+VSCode开发环境搭建.html",
+      "/posts/WSL2+OhMyZsh+VSCode开发环境搭建/WSL2+OhMyZsh+VSCode开发环境搭建.html",
       "/posts/Pandas常用操作/pandas常用技巧.html",
-      "/posts/matplotlib科研绘图/beautiful_data_visualizations_with_matplotlib.html",
+      "/posts/matplotlib科研绘图笔记/matplotlib科研绘图笔记.html",
       "/posts/线性相关与显著性检验/线性相关与显著性检验.html",
       "/posts/独立均值独立与线性不相关/独立均值独立与线性不相关.html",
       "/posts/numpy-random-notes/numpy_random.html",

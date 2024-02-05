@@ -1,11 +1,12 @@
 ---
-title: WSL2+VSCode开发环境搭建
+title: WSL2+OhMyZsh+VSCode开发环境搭建
 author: Tom
 date: "2024-02-05"
 toc: true  # 是否开启文章目录
-toc-depth: 3 # 目录层级深度，默认3级目录
+toc-expand: true
 code-block-bg: true  # 代码块背景颜色
 highlight-style: atom-one  # 代码块语法高亮风格
+image: oh_my_zsh.png
 categories: [Ubuntu]
 code-fold: false  # 代码块是否折叠
 cold-line-numbers: true # 代码块是否显示行数
@@ -118,6 +119,16 @@ chsh -s /usr/bin/zsh
 
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+关于 oh-my-zsh 的一些常用命令：
+
+```bash
+# 更新
+omz update
+
+# 卸载
+uninstall_oh_my_zsh
 ```
 
 ## 配置 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 主题
