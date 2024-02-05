@@ -62,7 +62,7 @@ wsl --import <Distribution Name> <InstallLocation> <FileName>
 
 安装指定版本的 Linux发行版，根据提示设置用户名和密码。
 
-```
+```bash
 wsl --install -d Ubuntu-22.04
 ```
 

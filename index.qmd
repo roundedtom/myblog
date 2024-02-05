@@ -8,7 +8,7 @@ listing:
   sort-ui: true
   filter-ui: true
   max-description-length: 50
-  image-placeholder: "/images/img-placeholder.png"
+  image-placeholder: "./images/img-placeholder.png"
   fields: [image, date, title, author, description]
 page-layout: full
 title-block-banner: true
