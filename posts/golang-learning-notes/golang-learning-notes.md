@@ -4,7 +4,7 @@ author: Tom
 date: "2020-02-03"
 toc: true
 code-block-bg: true
-highlight-style: atom-one
+highlight-style: zenburn
 categories: [Golang]
 image: golang.png
 code-fold: false

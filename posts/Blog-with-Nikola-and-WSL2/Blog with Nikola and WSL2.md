@@ -4,7 +4,7 @@ author: Tom
 date: "2022-04-29"
 toc: true
 code-block-bg: true
-highlight-style: atom-one
+highlight-style: arrow
 categories: [博客, WSL2, Nikola]
 image: nikola.jpg
 code-fold: false

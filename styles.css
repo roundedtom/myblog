@@ -60,3 +60,7 @@ body {
 .navbar-title {
     font-weight: 600;
 }
+
+.toc-active {
+  text-align: left;
+}
