@@ -15,5 +15,5 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    highlight-style: arrow
+    highlight-style: atom-one
     code-copy: true
