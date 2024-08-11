@@ -115,6 +115,22 @@ chsh -s /usr/bin/zsh
 
 设置默认 shell 后，重开一个窗口，zsh 会询问用户配置问题，选择 2 推荐配置，后续如果需要自己修改 `~/.zshrc`。
 
+## 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 和 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+```bash
+# 安装 zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# 安装 zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+修改 `~/.zshrc`：
+
+```bash
+plugins=(zsh-syntax-highlighting zsh-autosuggestions)
+```
+
 ## 安装 oh-my-zsh
 
 ```bash
